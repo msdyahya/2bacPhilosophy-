@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>MSD PHILO | الموسوعة الفلسفية الكاملة</title>
+    <meta name="description" content="مقرر الفلسفة كامل للبكالوريا - جميع المجزوءات والمنهجيات والامتحانات الوطنية">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: #eef3e8; color: #1a2e15; line-height: 1.6; direction: rtl; scroll-behavior: smooth; min-height: 100vh; }
+        .wrapper { max-width: 100%; margin: 0; background: white; min-height: 100vh; }
+        .main-header { background: #0a3024; color: white; padding: 30px 35px 20px; border-bottom: 5px solid #e2b13b; width: 100%; }
+        .logo h1 { font-size: 2.6rem; font-weight: 800; }
+        .logo h1 span { color: #e2b13b; }
+        .logo p { opacity: 0.85; margin-top: 8px; font-size: 1rem; }
+        .badge-header { background: #e2b13b; color: #0a3024; display: inline-block; padding: 6px 18px; border-radius: 40px; font-weight: 800; margin-top: 12px; font-size: 0.8rem; }
+        .nav-bar { display: flex; flex-wrap: wrap; background: #fff; border-bottom: 2px solid #d4e2ca; padding: 0 20px; gap: 6px; position: sticky; top: 0; z-index: 100; background: white; width: 100%; overflow-x: auto; justify-content: center; }
+        .nav-btn { background: transparent; border: none; padding: 15px 26px; font-family: 'Cairo', sans-serif; font-weight: 800; font-size: 1rem; color: #2a4d24; cursor: pointer; transition: 0.2s; border-bottom: 3px solid transparent; white-space: nowrap; }
+        .nav-btn i { margin-left: 8px; }
+        .nav-btn.active { color: #0a3024; border-bottom-color: #e2b13b; background: #fafdf7; }
+        .nav-btn:hover:not(.active) { background: #f0f5eb; border-bottom-color: #c9b87a; }
+        .panel { display: none; padding: 35px 40px; animation: fade 0.25s ease; width: 100%; }
+        .panel.active-panel { display: block; }
+        @keyframes fade { from { opacity: 0; transform: translateY(6px);} to { opacity: 1; transform: translateY(0);} }
+        .module-card { background: #fefef9; border-radius: 28px; margin-bottom: 45px; border: 1px solid #e2ecda; overflow: hidden; width: 100%; }
+        .card-title { background: #ecf3e7; padding: 18px 28px; border-bottom: 3px solid #c9dfbb; }
+        .card-title h2 { font-size: 1.9rem; font-weight: 800; color: #1f512f; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .card-title h2 i { color: #e2b13b; }
+        .card-content { padding: 24px 32px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 28px; }
+        .philo-block { background: white; border-radius: 20px; border: 1px solid #e0ebd4; padding: 18px 22px; }
+        .philo-block h3 { font-size: 1.5rem; font-weight: 800; color: #2b6e47; border-right: 5px solid #e2b13b; padding-right: 14px; margin-bottom: 18px; }
+        .thesis-item { margin-bottom: 20px; border-bottom: 1px dashed #e2e9db; padding-bottom: 15px; }
+        .thesis-item strong { color: #1d472a; display: block; font-size: 1.05rem; margin-bottom: 6px; }
+        .method-step { background: #f7faf4; border-right: 8px solid #e2b13b; padding: 20px; border-radius: 24px; margin-bottom: 25px; }
+        .exam-item { background: white; border: 1px solid #ddecd2; border-radius: 24px; padding: 20px 28px; margin-bottom: 28px; }
+        .exam-year { background: #e2b13b20; color: #2a572a; font-weight: 800; display: inline-block; padding: 4px 18px; border-radius: 60px; font-size: 0.8rem; }
+        .exam-title { font-size: 1.3rem; font-weight: 800; margin: 12px 0 10px; color: #1c401c; }
+        .exam-text { background: #fafbf5; padding: 15px 20px; border-radius: 16px; margin: 12px 0; border-right: 3px solid #e2b13b; font-size: 0.95rem; }
+        .real-example { background: #f9f7e8; padding: 16px 22px; border-radius: 28px; margin: 20px 0; border-right: 4px solid #e2b13b; }
+        footer { background: #11261e; color: #bbd5af; text-align: center; padding: 30px 20px; width: 100%; }
+        @media (max-width: 700px) { .panel { padding: 20px 16px; } .card-content { padding: 18px; } .nav-btn { padding: 10px 14px; font-size: 0.75rem; } .grid-2 { grid-template-columns: 1fr; } .card-title h2 { font-size: 1.4rem; } }
+        @media (min-width: 1400px) { .grid-2 { grid-template-columns: repeat(3, 1fr); } }
+        .subsection { margin-top: 25px; margin-bottom: 15px; }
+        .subsection h4 { font-size: 1.3rem; color: #2b6e47; margin-bottom: 12px; border-right: 3px solid #e2b13b; padding-right: 12px; }
+        .nav-bar::-webkit-scrollbar { height: 3px; }
+        .nav-bar::-webkit-scrollbar-track { background: #d4e2ca; }
+        .nav-bar::-webkit-scrollbar-thumb { background: #e2b13b; border-radius: 10px; }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="main-header">
+        <div class="logo">
+            <h1>MSD <span>PHILO</span> <i class="fas fa-book-open"></i></h1>
+            <p>مقرر الفلسفة كامل | منهجيات | امتحانات وطنية سابقة | أمثلة واقعية</p>
+            <div class="badge-header"><i class="fas fa-tv"></i> Yahya el Messaoudi | 2BAC PC F</div>
+        </div>
+    </div>
+    <div class="nav-bar">
+        <button class="nav-btn active" data-panel="panel1"><i class="fas fa-user"></i> الوضع البشري</button>
+        <button class="nav-btn" data-panel="panel2"><i class="fas fa-microscope"></i> مجزوعة المعرفة</button>
+        <button class="nav-btn" data-panel="panel3"><i class="fas fa-landmark"></i> مجزوعة السياسة</button>
+        <button class="nav-btn" data-panel="panel4"><i class="fas fa-heart"></i> مجزوعة الأخلاق</button>
+        <button class="nav-btn" data-panel="panel5"><i class="fas fa-pen-ruler"></i> منهجيات & نماذج</button>
+        <button class="nav-btn" data-panel="panel6"><i class="fas fa-file-signature"></i> امتحانات وطنية</button>
+        <button class="nav-btn" data-panel="panel7"><i class="fas fa-chalkboard"></i> أمثلة واقعية</button>
+    </div>
+
+    <!-- ==================== الوضع البشري ==================== -->
+    <div id="panel1" class="panel active-panel">
+        <!-- مفهوم الشخص - المحور الأول -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-user-circle"></i> مفهوم الشخص – المحور الأول: هوية الشخص</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: على ماذا تتأسس هوية الشخص؟ وهل هي هوية ثابتة أم متغيرة؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>رونيه ديكارت (العقل)</h3><div class="thesis-item">يرى ديكارت أن أساس هوية الشخص هو الفكر (العقل). فمن خلال عملية الشك، توصل ديكارت إلى حقيقة يقينية لا يمكن الشك فيها، وهي "أنا أفكر إذن أنا موجود" (الكوجيطو). هذا يعني أن جوهر الذات الإنسانية هو الفكر، وهو جوهر ثابت لا يتغير. وبالتالي فإن هوية الشخص ثابتة بثبات العقل.</div></div>
+                    <div class="philo-block"><h3>جون لوك (الشعور والذاكرة)</h3><div class="thesis-item">على عكس ديكارت، يرى جون لوك أن هوية الشخص لا تتأسس على جوهر ثابت، بل على الشعور والذاكرة. فالشخص هو كائن واع يشعر بأفعاله ويتذكرها. الذاكرة هي ما يربط بين ماضي الشخص وحاضره، وهي ما يجعله يشعر بأنه نفس الشخص عبر الزمن.</div></div>
+                    <div class="philo-block"><h3>أرثور شوبنهاور (الإرادة)</h3><div class="thesis-item">ينتقد شوبنهاور التصورات السابقة، معتبراً أن العقل والذاكرة يتغيران مع الزمن. بالنسبة له، أساس هوية الشخص هو شيء أعمق وأكثر ثباتاً: الإرادة، أو "إرادة الحياة". هذه الإرادة هي قوة فطرية وغريزية لا تتغير.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الشخص - المحور الثاني -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-star-of-life"></i> مفهوم الشخص – المحور الثاني: قيمة الشخص</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: من أين يستمد الشخص قيمته؟ هل باعتباره وسيلة أم غاية؟ وهل قيمته نسبية أم مطلقة؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>إيمانويل كانط (الغاية في ذاته)</h3><div class="thesis-item">يؤكد كانط أن الشخص يمتلك قيمة مطلقة. فهو غاية في ذاته وليس مجرد وسيلة. هذه القيمة نابعة من كونه ذاتاً لعقل عملي أخلاقي يشرع لنفسه القوانين. لذلك، يجب معاملة الذات الإنسانية والآخرين دائماً كغاية، مما يفرض احتراماً مطلقاً للشخص.</div></div>
+                    <div class="philo-block"><h3>جورج غوسدروف (التضامن)</h3><div class="thesis-item">يرى غوسدروف أن قيمة الشخص لا تكتمل في العزلة، بل في الانفتاح على الجماعة. فالإنسان لا يحقق كماله الأخلاقي إلا داخل المجتمع، ومن خلال المشاركة والتعايش، يكتسب الشخص قيمته الحقيقية.</div></div>
+                    <div class="philo-block"><h3>فريدريك هيجل (الامتثال للواجب)</h3><div class="thesis-item">يعتبر هيجل أن قيمة الشخص لا تكمن في ذاته الفردية، بل في مدى امتثاله للواجب وخدمته للروح المطلقة التي تتجلى في التاريخ والدولة. قيمة الفرد نسبية وتستمد من دوره في تحقيق أهداف كلية وتاريخية تتجاوزه.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الشخص - المحور الثالث -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-fist-raised"></i> مفهوم الشخص – المحور الثالث: الشخص بين الحرية والحتمية</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل الشخص ذات حرة أم أنه كيان خاضع لضرورات وحتميات متحكمة فيه؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>جان بول سارتر (الحرية المطلقة)</h3><div class="thesis-item">يذهب سارتر إلى أن الإنسان مشروع حر بشكل مطلق، ف"وجوده يسبق ماهيته". هذا يعني أن الإنسان يوجد أولاً ثم يختار ما سيكون عليه بأفعاله واختياراته. فهو مسؤول مسؤولية تامة عن تكوين ذاته، وقدره هو الحرية.</div></div>
+                    <div class="philo-block"><h3>باروخ سبينوزا (الحتمية)</h3><div class="thesis-item">يرى سبينوزا أن الحرية الإنسانية مجرد وهم. فالناس يعتقدون أنهم أحرار لأنهم يجهلون الأسباب الحقيقية التي تدفعهم إلى الفعل. في الحقيقة، الإنسان جزء من الطبيعة ويخضع لقوانينها الضرورية، مثله مثل باقي الكائنات.</div></div>
+                    <div class="philo-block"><h3>سيغموند فرويد (اللاشعور)</h3><div class="thesis-item">يكشف فرويد عن خضوع الشخص لحتميات نفسية لاواعية. ف"الأنا" ليس سيداً في بيته. بل هو في صراع دائم بين مطالب "الهو" الغريزية وأوامر "الأنا الأعلى" الأخلاقية، مما يجعل حرية الشخص محدودة جداً إن لم تكن منعدمة.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الغير - المحور الأول -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-users"></i> مفهوم الغير – المحور الأول: وجود الغير</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل وجود الغير ضروري لوجود الأنا، أم أنه يشكل تهديداً لها؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>جان بول سارتر (الوجود المزدوج)</h3><div class="thesis-item">يرى سارتر أن وجود الغير يحمل وجهاً مزدوجاً: فهو ضروري لوجود الأنا، وفي نفس الوقت يمثل تهديداً له. الغير هو الذي يكشفني لذاتي (فأنا خجول أمام نظرة الغير)، لكنه في نفس الوقت يحولني إلى موضوع ويشيّئني، وبالتالي "الجحيم هو الآخرون".</div></div>
+                    <div class="philo-block"><h3>رونيه ديكارت (الوجود غير الضروري)</h3><div class="thesis-item">من منظور ديكارت، وجود الغير ليس ضرورياً لإثبات وجود الذات. فالأنا يصل إلى حقيقة وجوده كذات مفكرة (أنا أفكر) بشكل مستقل ومنعزل عن العالم الخارجي والآخرين. وجود الغير يظل وجوداً افتراضياً واستنتاجياً فقط.</div></div>
+                    <div class="philo-block"><h3>مارتن هايدغر (الوجود المشترك)</h3><div class="thesis-item">يعتبر هايدغر أن وجود الأنا هو في الأصل "وجود-مع-الغير". لا يمكن تصور وجود إنساني أصيل في عزلة. فالوجود في العالم يعني بالضرورة الوجود مع الآخرين ومشاركتهم هذا العالم، وبالتالي وجود الغير هو وجود مشترك وأساسي.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الغير - المحور الثاني -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-eye"></i> مفهوم الغير – المحور الثاني: معرفة الغير</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل معرفة الغير ممكنة أم مستحيلة؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>نيكولا مالبرانش (الاستحالة)</h3><div class="thesis-item">يؤكد مالبرانش أن معرفة الغير كذات واعية (نفس أو روح) هي معرفة مستحيلة. يمكننا فقط معرفة جسده وسلوكاته الظاهرة. أما مشاعره وأفكاره الداخلية فلا يمكن الوصول إليها إلا عبر الاستدلال بالمماثلة. وهو استدلال تخميني وغير يقيني.</div></div>
+                    <div class="philo-block"><h3>موريس ميرلوبونتي (الإمكانية)</h3><div class="thesis-item">يرفض ميرلوبونتي الفصل بين النفس والجسد. ويرى أن معرفة الغير ممكنة من خلال التواصل والتعاطف. الغير ليس وعياً خالصاً أو جسداً مادياً فقط. بل هو وحدة كلية تتجلى في سلوكاته وكلامه وإشاراته. التواصل معه يفتح لنا باباً لمعرفة عالمه الداخلي.</div></div>
+                    <div class="philo-block"><h3>ماكس شيلر (الإدراك المباشر)</h3><div class="thesis-item">ينتقد شيلر فكرة الاستدلال بالمماثلة، ويرى أن معرفة الغير ممكنة عبر الإدراك المباشر لمشاعره من خلال تعابيره الجسدية (الفرح في الابتسامة، الحزن في الدموع). فالظاهر والباطن لدى الغير هما وجهان لعملة واحدة وليسا عالمين منفصلين.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الغير - المحور الثالث -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-handshake"></i> مفهوم الغير – المحور الثالث: العلاقة مع الغير</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما طبيعة العلاقة مع الغير؟ هل هي علاقة صداقة أم صراع؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>أرسطو (الصداقة والفضيلة)</h3><div class="thesis-item">يرى أرسطو أن أسمى علاقة يمكن أن تجمع بين الأنا والغير هي صداقة الفضيلة. هذه الصداقة لا تقوم على المنفعة أو المتعة، بل على حب الخير في ذاته. وهي علاقة نبيلة وضرورية للحياة الاجتماعية السعيدة.</div></div>
+                    <div class="philo-block"><h3>ألكسندر كوجيف (الصراع)</h3><div class="thesis-item">بناء على قراءته لهيجل، يرى كوجيف أن العلاقة مع الغير هي بالأسا س علاقة صراع من أجل الاعتراف. كل وعي يسعى إلى فرض ذاته على الآخر ونزع الاعتراف به، وهذا ما يتجلى في جدلية العبد والسيد، حيث يخاطر الطرفان بحياتهما من أجل الهيمنة.</div></div>
+                    <div class="philo-block"><h3>جوليا كريستيفا (الغريب بداخلنا)</h3><div class="thesis-item">تقترح كريستيفا رؤية جديدة للعلاقة مع الغير. فالغير ليس فقط خارجنا، بل هو أيضاً ذلك الغريب الذي يسكن دواخلنا. العلاقة معه لا يجب أن تكون علاقة إقصاء، بل علاقة قبول وتعايش، لأننا بقبولنا للغريب فينا، نصبح أكثر قدرة على قبول الغير خارجنا.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== مجزوعة المعرفة ==================== -->
+    <div id="panel2" class="panel">
+        <!-- مفهوم النظرية والتجربة - المحور الأول -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-flask"></i> مفهوم النظرية والتجربة – المحور الأول: التجربة والتجريب</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما الفرق بين التجربة والتجريب؟ وهل تتأسس النظريات العلمية على التجربة أم التجريب؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>كلود برنار (التجريب العلمي)</h3><div class="thesis-item">يميز برنار بين التجربة الخام العفوية، والتجريب الذي هو مساءلة منهجية للطبيعة داخل المختبر. يعتبر أن العلم يتأسس على التجريب الذي يتبع خطوات صارمة: الملاحظة، الفرضية، التجربة (التجريب)، ثم القانون.</div></div>
+                    <div class="philo-block"><h3>روني طوم (التجربة الخيالية)</h3><div class="thesis-item">يرى روني طوم أن التجريب العلمي بمفهومه الكلاسيكي لم يعد كافياً في العلم المعاصر. لذلك، يصبح من الضروري اللجوء إلى التجارب الخيالية أو الذهنية، التي تسبق التجريب المادي وتوجهه.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم النظرية والتجربة - المحور الثاني -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-brain"></i> مفهوم النظرية والتجربة – المحور الثاني: العقلانية العلمية</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما دور العقل في تأسيس النظريات العلمية؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>ألبير أينشتاين (العقلانية المبدعة)</h3><div class="thesis-item">يؤكد أينشتاين على أولوية العقل في بناء المعرفة العلمية. فالعقل الرياضي هو المبدأ الخالق والمبدع للنظرية العلمية. النظرية الفيزيائية هي إبداع حر، والتجربة تأتي في مرحلة لاحقة للتحقق.</div></div>
+                    <div class="philo-block"><h3>غاستون باشلار (العقلانية المنفتحة)</h3><div class="thesis-item">يرى باشلار أن العقلانية العلمية المعاصرة ليست مغلقة، بل هي حوار دائم ومفتوح مع التجربة. العلم هو نتاج جدل مستمر بين العقل الذي يبني والتجربة التي تختبر وتصحح.</div></div>
+                    <div class="philo-block"><h3>هانز رايشنباخ (العقلانية الرياضية)</h3><div class="thesis-item">يرى رايشنباخ أن العقلانية العلمية المعاصرة، خصوصاً في الفيزياء، هي عقلانية رياضية خالصة، حيث أصبحت المفاهيم العلمية بناءات رياضية مجردة.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم النظرية والتجربة - المحور الثالث -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-check-double"></i> مفهوم النظرية والتجربة – المحور الثالث: معايير علمية النظريات</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: معايير علمية النظريات؟ القابلية للنقد أم للتكذيب؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>كارل بوبر (القابلية للتكذيب)</h3><div class="thesis-item">يرى بوبر أن معيار التمييز بين النظرية العلمية وغير العلمية هو القابلية للتكذيب أو التزييف. النظرية تكون علمية بقدر ما تكون قابلة للاختبار التجريبي الذي قد يفضي إلى تكذيبها.</div></div>
+                    <div class="philo-block"><h3>الحسن ابن الهيثم (النقد والتشكيك)</h3><div class="thesis-item">يضع ابن الهيثم معياراً أساسياً لصحة النظريات وهو النقد والتشكيك المنهجي. فالباحث عن الحقيقة يجب أن يفحص النظرية من كل جوانبها وينقدها نقداً صارماً.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الحقيقة - المحور الأول -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-search"></i> مفهوم الحقيقة – المحور الأول: الرأي والحقيقة</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما طبيعة العلاقة بين الرأي والحقيقة؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>غاستون باشلار (الرأي عائق)</h3><div class="thesis-item">يرى باشلار أن الرأي يمثل عائقاً إبستمولوجياً أمام بناء الحقيقة العلمية. فالرأي معرفة سطحية، عفوية، وغير منهجة، بينما الحقيقة العلمية تتطلب قطيعة مع الرأي.</div></div>
+                    <div class="philo-block"><h3>غوتفريد لايبنتز (الرأي معرفة محتملة)</h3><div class="thesis-item">يعطي لايبنتز للرأي قيمة، معتبراً إياه درجة من درجات المعرفة. الرأي ليس خطأ بالضرورة، بل هو معرفة محتملة وغير يقينية، ويمكن أن يكون نقطة انطلاق للتفكير.</div></div>
+                    <div class="philo-block"><h3>رونيه ديكارت (القطيعة مع الرأي)</h3><div class="thesis-item">يؤكد ديكارت أن الحقيقة هي بناء منهجي عقلي يتطلب إحداث قطيعة تامة مع الرأي والمعارف المكتسبة عبر الحواس. الوصول إلى الحقيقة يقتضي الشك في كل شيء.</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الحقيقة - المحور الثاني -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-balance-scale"></i> مفهوم الحقيقة – المحور الثاني: معايير الحقيقة</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: كيف يمكن التأكد من الحقيقة؟ معاييرها؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>رونيه ديكارت (البداهة العقلية)</h3><div class="thesis-item">معيار الحقيقة عند ديكارت هو البداهة والوضوح العقليان. فكل فكرة واضحة ومتميزة في الذهن هي فكرة حقيقية. العقل هو القادر على الوصول إلى الحقيقة بشكل يقيني.</div></div>
+                    <div class="philo-block"><h3>ديفيد هيوم (التجربة الحسية)</h3><div class="thesis-item">يرى هيوم أن معيار الحقيقة هو مطابقة الأفكار للواقع التجريبي. كل فكرة في الذهن يجب أن يكون لها أصل في الانطباعات الحسية، وإلا فهي فكرة وهمية.</div></div>
+                    <div class="philo-block"><h3>ميشيل فوكو (السلطة)</h3><div class="thesis-item">ينظر فوكو إلى الحقيقة من زاوية مختلفة، معتبراً أنها ليست شيئاً محايداً، بل هي نتاج آليات السلطة. لكل مجتمع "نظامه الخاص للحقيقة".</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- مفهوم الحقيقة - المحور الثالث -->
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-gem"></i> مفهوم الحقيقة – المحور الثالث: قيمة الحقيقة</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: من أين تستمد الحقيقة قيمتها؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>إيمانويل كانط (قيمة أخلاقية)</h3><div class="thesis-item">يرى كانط أن الحقيقة لها قيمة أخلاقية مطلقة. قول الحقيقة هو واجب أخلاقي مطلق وغير مشروط، بصرف النظر عن النتائج التي قد تترتب عنه.</div></div>
+                    <div class="philo-block"><h3>وليم جيمس (القيمة النفعية)</h3><div class="thesis-item">من منظور براغماتي، يرى جيمس أن قيمة الحقيقة تكمن في منفعتها وفائدتها العملية. الفكرة تكون حقيقة إذا كانت نافعة ومفيدة وتؤدي إلى النجاح.</div></div>
+                    <div class="philo-block"><h3>فريدريك نيتشه (وهم يخدم الحياة)</h3><div class="thesis-item">ينتقد نيتشه فكرة البحث عن الحقيقة كغاية سامية، معتبراً أن ما نسميه "حقيقة" هو في الغالب مجرد أوهام نسينا أنها كذلك، ضرورية للحفاظ على الحياة.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== مجزوعة السياسة ==================== -->
+    <div id="panel3" class="panel">
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-building"></i> مفهوم الدولة – المحور الأول: مشروعية الدولة وغاياتها</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما الغاية من الدولة؟ ومن أين تستمد مشروعيتها؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>باروخ سبينوزا (غاية الحرية)</h3><div class="thesis-item">يرى سبينوزا أن الغاية الحقيقية للدولة ليست الهيمنة، بل توفير الحرية للأفراد. فالدولة الشرعية هي التي تمكن مواطنيها من الحفاظ على حقهم الطبيعي في الوجود والتفكير.</div></div>
+                    <div class="philo-block"><h3>توماس هوبز (غاية الأمن)</h3><div class="thesis-item">يرى هوبز أن الغاية القصوى من قيام الدولة هي تحقيق السلم والأمن. يتم ذلك عبر تعاقد اجتماعي يتنازل فيه الأفراد عن حقهم الطبيعي لصالح حاكم مطلق.</div></div>
+                    <div class="philo-block"><h3>ماكس فيبر (المشروعية)</h3><div class="thesis-item">يميز فيبر بين ثلاثة أنماط من المشروعية: التقليدية (العادات)، الكاريزمية (صفات القائد)، والعقلانية القانونية (القوانين والمؤسسات).</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-gavel"></i> مفهوم الدولة – المحور الثاني: طبيعة السلطة السياسية</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل السلطة متعالية على الأفراد أم محايثة لهم؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>لوي ألتوسير (أجهزة الدولة)</h3><div class="thesis-item">يميز ألتوسير بين جهاز قمعي (كالجيش والشرطة) يعمل بالعنف، وأجهزة إيديولوجية (كالتعليم والإعلام) تعمل بالإقناع لضمان خضوع الأفراد.</div></div>
+                    <div class="philo-block"><h3>مونتسكيو (فصل السلط)</h3><div class="thesis-item">لتجنب استبداد السلطة، يقترح مونتسكيو مبدأ فصل السلط الثلاث (التشريعية، التنفيذية، القضائية) على هيئات مختلفة، بحيث تحد كل سلطة من الأخرى.</div></div>
+                    <div class="philo-block"><h3>ميشيل فوكو (السلطة المنتشرة)</h3><div class="thesis-item">يعارض فوكو الفكرة القائلة بأن السلطة تتركز في جهاز الدولة فقط. فالسلطة محايثة ومنتشرة في كل علاقات المجتمع (الأسرة، المدرسة، المستشفى).</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-fist-raised"></i> مفهوم الدولة – المحور الثالث: الدولة بين الحق والعنف</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: كيف تمارس الدولة سلطتها؟ بالقانون أم بالعنف؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>ماكس فيبر (احتكار العنف)</h3><div class="thesis-item">يرى فيبر أن الدولة تتميز بكونها الجهاز الذي يحتكر لنفسه الحق في ممارسة العنف المادي المشروع. فالدولة وحدها هي التي يحق لها استخدام القوة لإخضاع المواطنين.</div></div>
+                    <div class="philo-block"><h3>جاكلين روس (دولة الحق)</h3><div class="thesis-item">تؤكد روس أن الدولة المعاصرة يجب أن تكون دولة الحق والقانون، حيث تخضع السلطة نفسها للقانون، وتكون الأولوية لاحترام الشخص الإنساني.</div></div>
+                    <div class="philo-block"><h3>عبد الله العروي (نقيض دولة الحق)</h3><div class="thesis-item">يعتبر العروي أن الدولة التي تفتقد للشرعية وتعتمد على التسلط والقوة بدلاً من القانون، هي نقيض دولة الحق، ولا يمكن أن تحقق العدالة.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-scale-balanced"></i> مفهوم الحق والعدالة – المحور الأول: الحق بين الطبيعي والوضعي</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل العدالة ترتبط بالحق الطبيعي أم الحق الوضعي؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>توماس هوبز (الحق الطبيعي كحرية مطلقة)</h3><div class="thesis-item">يعرف هوبز الحق الطبيعي بأنه الحرية المطلقة لكل إنسان. هذا الحق يؤدي إلى حرب الكل ضد الكل، لذلك يتم التنازل عنه لصالح الحق الوضعي (القانون).</div></div>
+                    <div class="philo-block"><h3>جان جاك روسو (الحق الوضعي كتعاقد)</h3><div class="thesis-item">يرى روسو أن أصل الحق هو التعاقد الاجتماعي. فالأفراد يتنازلون عن حريتهم الطبيعية لصالح الإرادة العامة، ويكتسبون بالمقابل حقوقاً مدنية يضمنها القانون.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-gavel"></i> مفهوم الحق والعدالة – المحور الثاني: العدالة كأساس للحق</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما علاقة العدالة بالحق؟ وأيهما أساس الآخر؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>أرسطو (العدالة أساس الفضيلة)</h3><div class="thesis-item">يرى أرسطو أن العدالة هي أساس الفضيلة، وتتحقق من خلال احترام قوانين الدولة. فالقوانين هي التي تكفل الحقوق وتوزعها بشكل عادل بين الأفراد.</div></div>
+                    <div class="philo-block"><h3>شيشرون (العدالة أسمى من القانون)</h3><div class="thesis-item">يعتبر شيشرون أن القانون الوضعي قد يكون جائراً. لذلك، يجب الاحتكام إلى العدالة كشعور طبيعي مشترك بين كل الناس، وهو أسمى من القوانين.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-hand-holding-heart"></i> مفهوم الحق والعدالة – المحور الثالث: العدالة بين المساواة والإنصاف</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما الغاية من العدالة؟ المساواة أم الإنصاف؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>أفلاطون (العدالة كفضيلة)</h3><div class="thesis-item">العدالة عند أفلاطون هي فضيلة تتحقق بانسجام قوى النفس الثلاث. وعلى صعيد المجتمع، تتحقق العدالة حين يؤدي كل فرد الوظيفة التي وهبتها له الطبيعية.</div></div>
+                    <div class="philo-block"><h3>آلان (الإنصاف أساس العدالة)</h3><div class="thesis-item">يرى آلان أن المساواة المطلقة غير ممكنة لأن الناس لم يولدوا سواسية. لذلك، العدالة الحقيقية هي الإنصاف، أي إعطاء كل ذي حق حقه مع مراعاة الفروق الفردية.</div></div>
+                    <div class="philo-block"><h3>جون راولز (العدالة كإنصاف)</h3><div class="thesis-item">يقدم راولز "العدالة كإنصاف" التي تتأسس على مبدأين: المساواة في الحقوق، واللامساواة التي تسمح بتفاوتات شرط أن تكون في صالح الفئات الأقل حظاً.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== مجزوعة الأخلاق ==================== -->
+    <div id="panel4" class="panel">
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-hand-peace"></i> مفهوم الواجب – المحور الأول: الواجب والإكراه</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل الواجب يصدر عن إرادة حرة أم عن إكراه؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>إيمانويل كانط (الواجب كأمر عقلي حر)</h3><div class="thesis-item">يرى كانط أن الواجب الأخلاقي هو أمر قطعي مطلق يشرعه العقل العملي. إنه ليس نابعاً من إكراه خارجي، بل من إلزام ذاتي حر. فالإنسان يفرض على نفسه الواجب الأخلاقي.</div></div>
+                    <div class="philo-block"><h3>إميل دوركايم (الواجب كإكراه مجتمعي)</h3><div class="thesis-item">يرى دوركايم أن الواجب الأخلاقي هو نتاج إكراه وإلزام خارجي يفرضه المجتمع. فالضمير الجمعي هو الذي يحدد الواجبات ويرسخها في وعي الأفراد.</div></div>
+                    <div class="philo-block"><h3>جان ماري غويو (الواجب كقدرة طبيعية)</h3><div class="thesis-item">ينتقد غويو فكرة الواجب كإكراه، ويرى أن الفعل الأخلاقي ينبع من وفرة الحياة لدى الفرد. الإنسان الفاضل يقوم بالخير بشكل تلقائي لأنه يمتلك طاقة للعطاء.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-brain"></i> مفهوم الواجب – المحور الثاني: الوعي الأخلاقي</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل الوعي الأخلاقي فطري أم مكتسب؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>جان جاك روسو (الوعي الفطري)</h3><div class="thesis-item">يؤكد روسو أن الوعي الأخلاقي فطري وطبيعي في الإنسان. إنه "غريزة إلهية" تمكننا من التمييز بين الخير والشر دون تعلم، وهو صوت داخلي يوجهنا نحو الفضيلة.</div></div>
+                    <div class="philo-block"><h3>سيغموند فرويد (الوعي المكتسب)</h3><div class="thesis-item">يرى فرويد أن الوعي الأخلاقي (الأنا الأعلى) ليس فطرياً، بل مكتسب من سلطة خارجية، عبر استبطان أوامر ونواهي الوالدين والمجتمع.</div></div>
+                    <div class="philo-block"><h3>فريدريك نيتشه (أصل الأخلاق)</h3><div class="thesis-item">يرفض نيتشه فكرة وجود وعي أخلاقي فطري وعالمي. فالأخلاق لها تاريخ: "أخلاق السادة" تنبع من القوة، و"أخلاق العبيد" تنبع من الضعف والشفقة.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-users"></i> مفهوم الواجب – المحور الثالث: الواجب والمجتمع</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: كيف يعكس الواجب قيم المجتمع؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>إميل دوركايم (المجتمع مصدر الواجب)</h3><div class="thesis-item">يؤكد دوركايم أن المجتمع هو المصدر الوحيد للواجب الأخلاقي. فالضمير الجمعي يحدد للأفراد ما يجب عليهم القيام به من واجبات، بهدف الحفاظ على تماسك المجتمع.</div></div>
+                    <div class="philo-block"><h3>ماكس فيبر (أخلاق الاعتقاد والمسؤولية)</h3><div class="thesis-item">يميز فيبر بين أخلاق الاعتقاد (التركيز على المبادئ المطلقة دون الاكتراث بالنتائج) وأخلاق المسؤولية (تقدير عواقب الفعل).</div></div>
+                    <div class="philo-block"><h3>جون راولز (الواجب كتضامن)</h3><div class="thesis-item">يرى راولز أن الواجب الأخلاقي في المجتمعات الديمقراطية يجب أن يكون كونياً، ويرتبط بفكرة التضامن مع الأجيال القادمة عبر مبادئ العدالة.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-dove"></i> مفهوم الحرية – المحور الأول: الحرية والحتمية</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: هل الحرية تتعارض مع الحتمية؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>ابن رشد (حرية جزئية)</h3><div class="thesis-item">يرى ابن رشد أن الفعل الإنساني يتصف بحرية جزئية. فالإنسان يمتلك إرادة حرة، لكن هذه الحرية مقيدة بالمشيئة الإلهية والقوانين الطبيعية.</div></div>
+                    <div class="philo-block"><h3>موريس ميرلوبونتي (حرية مشروطة)</h3><div class="thesis-item">يعتبر ميرلوبونتي أن حرية الإنسان ليست مطلقة، بل مشروطة بالوضعيات التي يعيشها. الحرية هي القدرة على الانخراط في هذه الوضعيات وتجاوزها بوعي.</div></div>
+                    <div class="philo-block"><h3>عبد الله العروي (العلم والحرية)</h3><div class="thesis-item">يرى العروي أن العلم الحديث، بقدر ما هو مشروع تنويري يخدم حرية الإنسان، فإنه قد يخاطر بها بما يكشفه من حتميات وقوانين ضرورية.</div></div>
+                </div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-gavel"></i> مفهوم الحرية – المحور الثالث: الحرية والقانون</h2></div>
+            <div class="card-content">
+                <div class="subsection"><h4>الإشكالية: ما علاقة الحرية بالقانون؟</h4></div>
+                <div class="grid-2">
+                    <div class="philo-block"><h3>توماس هوبز (الحرية في ظل القانون)</h3><div class="thesis-item">يرى هوبز أن الحرية الحقيقية لا توجد إلا في ظل القانون. فالحرية الطبيعية مطلقة تؤدي إلى الفوضى، أما الحرية المنظمة بالقانون فهي التي تسمح للأفراد بالتمتع بحقوقهم في أمان.</div></div>
+                    <div class="philo-block"><h3>مونتسكيو (القانون يضمن الحرية)</h3><div class="thesis-item">يؤكد مونتسكيو أن الحرية هي الحق في أن نفعل كل ما تسمح به القانون. فالقانون لا يسلب الحرية، بل يضمنها ويحميها من تعسف الآخرين.</div></div>
+                    <div class="philo-block"><h3>حنة أرندت (الحرية في السياسة)</h3><div class="thesis-item">تعتبر أرندت أن مجال تحقق الحرية الفعلية هو المجال السياسي والاجتماعي. الحرية هي قدرة على الفعل والمبادرة مع الآخرين في فضاء عمومي منظم.</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== المنهجيات والنماذج ==================== -->
+    <div id="panel5" class="panel">
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-pen-fancy"></i> الخطوات الأساسية للكتابة الفلسفية</h2></div>
+            <div class="card-content">
+                <div class="method-step"><strong>1. مطلب الفهم (المقدمة) – 4 نقاط :</strong> وهي لحظة تأطير الموضوع وتحديد إشكاليته المحورية. تتضمن: التمهيد (الانطلاق من المجال العام ثم الخاص)، تحديد الموضوع (إبراز القضية الأساسية)، صياغة الإشكال (تحويل القضية إلى أسئلة أساسية وموجهة للتحليل والمناقشة).</div>
+                <div class="method-step"><strong>2. مطلب التحليل (العرض – الجزء الأول) – 5 نقاط :</strong> وهي لحظة تفكيك الموضوع وشرح عناصره الأساسية. تتضمن: شرح الأطروحة (تحديد الفكرة الرئيسية)، تحديد المفاهيم (استخراج المفاهيم المركزية وشرحها)، تحليل الحجاج (إبراز الآليات والأساليب الحجاجية المعتمدة للدفاع عن الأطروحة).</div>
+                <div class="method-step"><strong>3. مطلب المناقشة (العرض – الجزء الثاني) – 5 نقاط :</strong> اختبار القيمة والحدود، استحضار مواقف فلسفية أخرى (مؤيدة أو معارضة)، طرح نقد داخلي (من داخل الأطروحة نفسها) ونقد خارجي (من خارجها)، فتح آفاق جديدة وتساؤلات.</div>
+                <div class="method-step"><strong>4. التركيب والخاتمة – 4 نقاط :</strong> تمثل هذه اللحظة الختامية تتويجاً للمجهود التحليلي والمناقشة. التركيب: تجميع نتائج التحليل والمناقشة، إبراز الطابع الإشكالي للموضوع. الخاتمة: تقديم الرأي الشخصي المدعم بحجة منطقية، وطرح سؤال مفتوح مرتبط بالمحور الموالي أو بإشكالية أوسع.</div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-quote-right"></i> نماذج مقدمات جاهزة (جميع المجزوءات)</h2></div>
+            <div class="card-content">
+                <div class="philo-block"><h3>مجزوعة الوضع البشري</h3><div class="thesis-item"><strong>النموذج 1:</strong> يتأطر الموضوع المطروح ضمن مجال الوضع البشري، هذا الوضع الذي يتميز بالتعقيد والتداخل بين ما هو ذاتي وما هو علائقي. ويسلط الضوء تحديداً على مفهوم (الشخص/الغير)، باعتباره... [تعريف المفهوم]. وإذا كان هذا المفهوم يطرح قضايا فلسفية متعددة، فإننا أمام قضية أساسية تتعلق بـ... هذا ما يدفعنا إلى طرح الإشكال التالية: ...؟ وهل يمكن القول إن...؟</div></div>
+                <div class="philo-block"><h3>مجزوعة المعرفة</h3><div class="thesis-item"><strong>النموذج 1:</strong> يندرج الموضوع ضمن إطار البحث في المعرفة، باعتبارها ذلك النشاط الفكري الذي يسعى الإنسان من خلاله إلى فهم ذاته والعالم المحيط به. ويعالج على وجه الخصوص مفهوم (النظرية والتجربة / الحقيقة) الذي يهتم بـ... [تعريف المفهوم]. وتنحصر القضية الأساسية حول... الأمر الذي يضعنا أمام التساؤلات التالية: ...؟ وبأي معنى يمكن الحديث عن...؟</div></div>
+                <div class="philo-block"><h3>مجزوعة السياسة</h3><div class="thesis-item"><strong>النموذج 1:</strong> يقع الموضوع في قلب انشغالات الفلسفة بالسياسة، بوصفها فن تدبير الشأن العام وتنظيم حياة الأفراد داخل المجتمع. ويتناول بالتحديد مفهوم (الدولة / الحق والعدالة) من خلال إشكالية... وهذا ما يضعنا أمام مفارقة أساسية تتمثل في.... ويدفعنا لطرح التساؤلات التالية: هل...؟ أم أن...؟ وكيف يمكن حل هذه الإشكالية؟</div></div>
+                <div class="philo-block"><h3>مجزوعة الأخلاق</h3><div class="thesis-item"><strong>النموذج 1:</strong> يتأطر الموضوع ضمن مجال الأخلاق، وهو المبحث الفلسفي الذي يهتم بالقيم والمعايير التي توجه السلوك الإنساني. ويسلط الضوء على مفهوم (الواجب / الحرية) من زاوية علاقته بـ... هذه العلاقة التي تطرح مفارقة واضحة بين... و... مما يجعلنا نتساءل: إلى أي حد يمكن القول إن...؟ وما هي حدود...؟</div></div>
+            </div>
+        </div>
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-file-alt"></i> منهجية تحليل النص الفلسفي – تحليل القولة – تحليل السؤال</h2></div>
+            <div class="card-content">
+                <div class="method-step"><strong>منهجية تحليل النص الفلسفي:</strong> تحديد الإشكال الرئيسي الذي يطرحه النص، شرح الأطروحة المركزية، استخراج المفاهيم الأساسية وتحليلها، تحليل الحجاج والأمثلة والبراهين، مناقشة الأطروحة (إبراز القيمة والحدود، استحضار مواقف مؤيدة أو معارضة)، ثم تركيب النتائج وتقديم خاتمة برأي شخصي وسؤال مفتوح.</div>
+                <div class="method-step"><strong>تحليل القولة الفلسفية:</strong> تختلف القولة عن النص في كونها مكثفة وتتطلب التوسع في أطروحتها. - شرح الأطروحة المتضمنة: "تتضمن القولة أطروحة مركزية مفادها أن... ويمكن التوسع..." - بناء المفاهيم: "تتقاطع داخل القولة مفاهيم أساسية، أبرزها مفهوم..." - استدعاء حجاج مفترض: "يمكن الدفاع عن هذه الأطروحة باعتماد حجج من الواقع أو من تاريخ الفلسفة..."</div>
+                <div class="method-step"><strong>تحليل السؤال الفلسفي:</strong> السؤال لا يتضمن أطروحة، بل يفترضها، والمطلوب هو بناؤها. - تفكيك بنية السؤال: "يتكون السؤال من أداة الاستفهام (هل) التي تقتضي إجابتين محتملتين... ومن مفاهيم مركزية هي..." - شرح المفاهيم - بناء الأطروحة المفترضة.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== الامتحانات الوطنية ==================== -->
+    <div id="panel6" class="panel">
+        <div class="module-card">
+            <div class="card-title"><h2><i class="fas fa-calendar-alt"></i> الامتحان الوطني الموحد للبكالوريا – جميع الدورات</h2></div>
+            <div class="card-content">
+                <div class="exam-item"><div class="exam-year">الدورة الاستدراكية 2024</div><div class="exam-text">هل السعي إلى الحقيقة منزه عن كل منفعة؟</div><div class="exam-text">"كل حديث عن سلطة خالية من العنف هو حديث عديم المعنى." انطلاقا من القولة، بين (ي) ما إذا كانت ممارسة سلطة الدولة تقترن، دائما، بالعنف.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة العادية 2024</div><div class="exam-text">هل تتحقق العدالة بالتسامح التام بين الناس أم بإنصاف فئات منهم فحسب؟</div><div class="exam-text">"إنني عاجز عن تكوين معرفة أكيدة عن الغير لأنني لا أدري ما يدور بداخله." انطلاقا من القولة، بين (ي) ما إذا كانت المعرفة اليقينية بالغير تقتضي بالضرورة الاطلاع على أعماقه.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة العادية 2023</div><div class="exam-text">هل الخوف من العقاب هو مصدر القيام بالواجب؟</div><div class="exam-text">"كل دولة تولد عن طريق العنف، ولا يمكن لسلطتها أن تدوم إلا بواسطة العنف." انطلاقا من القولة، بين (ي) ما إذا كان العنف، فعلا، أساس قيام الدولة وضامن بقاء سلطتها.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة العادية 2022</div><div class="exam-text">هل تتطابق غاية الدولة دائما مع غاية المواطنين؟</div><div class="exam-text">"لا شيء يدعونا إلى احترام الشخص وتقديره سوى سلطته و ثروته المادية". انطلاقا من القولة، بين (ي) ما إذا كانت قيمة الشخص تتوقف، فقط، على السلطة والثروة المادية.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة الاستدراكية 2022</div><div class="exam-text">هل تتعدد معايير معرفة الغير معرفة موضوعية؟</div><div class="exam-text">"لا ينبغي الخلط بين الحقيقة ورأي الأغلبية." انطلاقا من القولة، بين (ي) لماذا لا يعتبر رأي الأغلبية من الناس حقيقة.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة العادية 2021</div><div class="exam-text">هل اللجوء إلى العنف ينفي عن الدولة صفة دولة الحق؟</div><div class="exam-text">"لم أسمع قط عن أي نظرية كبرى طرحت على أساس من التجربة فحسب، فالنظرية هي التي تأتي أولاً." انطلاقا من القولة، بين (ي) هل الأولوية في بناء المعرفة العلمية تكون، بالضرورة للنظرية.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة الاستدراكية 2021</div><div class="exam-text">هل يمكن بناء النظرية العلمية بمعزل عن الواقع؟</div><div class="exam-text">"إن خبرات الحواس لا تعطينا، أبدا، حقائق يقينية." انطلاقا من القولة، بين (ي) لم يتعين استبعاد الحواس كي تبلغ الحقيقة.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة الاستدراكية 2020</div><div class="exam-text">هل التواصل هو أساس العلاقة مع الغير؟</div><div class="exam-text">"لا يوجد معيار آخر لعلمية النظرية سوى تطبيقها التام مع الظواهر في الخارج." انطلاقا من القولة، بين (ي) هل التطابق مع الواقع هو المعيار الوحيد لعلمية النظريات العلمية.</div></div>
+                <div class="exam-item"><div class="exam-year">الدورة العادية 2020</div><div class="exam-text">هل العقل أساس بناء النظرية العلمية؟</div><div class="exam-text">"لا نستطيع القول، أبدا، إن الرأي حقيقي". بين (ي)، انطلاقا من القولة، لم لا يمكن اعتبار الرأي حقيقة.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== الأمثلة الواقعية ==================== -->
+    <div id="panel7" class="panel">
+        <div class="module-card"><div class="card-title"><h2><i class="fas fa-chalkboard-user"></i> مجزوعة الوضع البشري – أمثلة واقعية</h2></div><div class="card-content">
+            <div class="real-example"><strong>🔹 مريض الزهايمر وهوية الشخص:</strong> مريض بالزهايمر يفقد ذاكرته تدريجياً. فلا يعود يتعرف على أبنائه. هذا يطرح سؤال ديكارت ولوك: هل هويتنا في عقلنا وذاكرتنا أم في استمرارية جسدنا؟</div>
+            <div class="real-example"><strong>🔹 الموظف بين الإنتاجية والكرامة:</strong> في شركة، يتم تقييم الموظف بناءً على إنتاجيته، بينما تفرض حقوق الإنسان معاملته كغاية في ذاته. هذا يجسد إشكال قيمة الشخص بين التصور النفعي (هيجل) والتصور الأخلاقي (كانط).</div>
+            <div class="real-example"><strong>🔹 شاب من بيئة فقيرة ينجح:</strong> شاب من بيئة فقيرة ينجح ويصبح طبيباً. البعض يرى أنه خضع لحتمية اجتماعية (سبينوزا)، وآخرون يرون أنه صنع نفسه بإرادته الحرة (سارتر).</div>
+            <div class="real-example"><strong>🔹 الخجل أمام نظرة الآخر:</strong> عندما أكون وحيداً أتصرف بعفوية، لكن بمجرد دخول شخص آخر أبدأ بمراقبة تصرفاتي. هذا يظهر أن وجود الغير ضروري لذاتي لكنه يحد من حريتي.</div>
+        </div></div>
+        <div class="module-card"><div class="card-title"><h2><i class="fas fa-flask"></i> مجزوعة المعرفة – أمثلة واقعية</h2></div><div class="card-content">
+            <div class="real-example"><strong>🔹 سقوط التفاحة (التجربة والتجريب):</strong> ملاحظة سقوط التفاحة هي تجربة خام. لكن قيام العالم بإعادة التجربة في المختبر وقياس سرعة السقوط هو تجريب علمي منظم.</div>
+            <div class="real-example"><strong>🔹 نظرية النسبية لأينشتاين:</strong> لم تأت من تجربة مباشرة، بل من بناء رياضي عقلي خالص، والتجربة أتت لاحقاً لتؤكد صحة ما بناه العقل.</div>
+            <div class="real-example"><strong>🔹 البجع الأبيض (معيار التكذيب):</strong> نظرية "كل البجع أبيض" قابلة للتكذيب (بوبر)؛ يكفي أن نجد بجعة سوداء واحدة لدحضها.</div>
+        </div></div>
+        <div class="module-card"><div class="card-title"><h2><i class="fas fa-landmark"></i> مجزوعة السياسة والأخلاق – أمثلة واقعية</h2></div><div class="card-content">
+            <div class="real-example"><strong>🔹 جائحة كورونا وغايات الدولة:</strong> فرض الحجر الصحي كان لحماية الأمن العام (هوبز)، وتقديم الدعم للمتضررين يهدف لضمان الحق في الحياة والصحة (سبينوزا).</div>
+            <div class="real-example"><strong>🔹 كاميرات المراقبة والسلطة:</strong> كاميرات المراقبة هي جهاز قمعي (ألتوسير)، لكنها أيضاً سلطة منتشرة (فوكو) تجعل المواطنين يراقبون سلوكهم بأنفسهم.</div>
+            <div class="real-example"><strong>🔹 الضرائب التصاعدية والعدالة:</strong> تطبيق نفس الضريبة على غني وفقير هو مساواة لكنه ليس إنصافاً. العدالة كإنصاف تتجلى في ضرائب تصاعدية يراعي فيها الفقير.</div>
+            <div class="real-example"><strong>🔹 الغش في الامتحان والواجب:</strong> طالب يغش في الامتحان لأن لا أحد يراقبه (الواجب مرتبط بالإكراه)، وآخر يمتنع عن الغش حتى لو كانت الفرصة سانحة (الواجب نابع من الإرادة الحرة).</div>
+        </div></div>
+        <div class="module-card"><div class="card-title"><h2><i class="fas fa-star-of-life"></i> نصائح للامتحان</h2></div><div class="card-content">
+            <div class="real-example"><strong>📌 الأسبوع الأخير:</strong> خصص الأيام الثلاثة الأولى لمراجعة الملخصات والمفاهيم الأساسية، واليومين التاليين للمنهجيات، ثم اليوم الأخير للراحة.</div>
+            <div class="real-example"><strong>📌 تحسين التعبير:</strong> اقرأ كل يوم صفحة من كتاب فلسفي بصوت عالٍ، وحاول إعادة صياغة أفكار الفلاسفة بأسلوبك الخاص.</div>
+            <div class="real-example"><strong>📌 ليلة الامتحان:</strong> لا تراجع أي شيء جديد. قم فقط بقراءة سريعة للعناوين والمفاهيم الأساسية، والأهم أن تنام جيداً.</div>
+            <div class="real-example"><strong>📌 ضع تصميماً على ورقة الوسخ:</strong> قبل أن تبدأ الكتابة، خصص 15 دقيقة لوضع خطة واضحة: المقدمة، التحليل، المناقشة، التركيب.</div>
+        </div></div>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-graduation-cap"></i> بتصميم و تطوير يحيى المسعودي | MSD TEAM</p>
+        <p><i class="fas fa-quote-right"></i> قد تحدث أخطاء قليلة ، نستسمح</p>
+    </footer>
+</div>
+<script>
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const target = btn.getAttribute('data-panel');
+            document.querySelectorAll('.panel').forEach(panel => panel.classList.remove('active-panel'));
+            document.getElementById(target).classList.add('active-panel');
+        });
+    });
+</script>
+</body>
+          </html>
